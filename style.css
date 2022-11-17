@@ -71,7 +71,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  width: 50%; }
+  width: 50%;
+  cursor: pointer; }
   .search-bar-input {
     width: 100%;
     padding: 1.4rem;
