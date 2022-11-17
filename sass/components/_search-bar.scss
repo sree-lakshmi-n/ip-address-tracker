@@ -1,7 +1,6 @@
 .search-bar {
   @include flex-center;
   width: 50%;
-  cursor: pointer;
 
   &-input {
     width: 100%;
@@ -12,6 +11,7 @@
     outline: none;
     border-top-left-radius: $border-radius-medium;
     border-bottom-left-radius: $border-radius-medium;
+    cursor: pointer;
     &::placeholder {
       color: $dark-gray;
     }
@@ -23,6 +23,7 @@
     padding: 0.8rem 1.8rem;
     border-top-right-radius: $border-radius-medium;
     border-bottom-right-radius: $border-radius-medium;
+    cursor: pointer;
     img {
       width: 100%;
     }

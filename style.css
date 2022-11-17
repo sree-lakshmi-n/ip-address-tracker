@@ -71,8 +71,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  width: 50%;
-  cursor: pointer; }
+  width: 50%; }
   .search-bar-input {
     width: 100%;
     padding: 1.4rem;
@@ -81,7 +80,8 @@ body {
     border: none;
     outline: none;
     border-top-left-radius: 1.1rem;
-    border-bottom-left-radius: 1.1rem; }
+    border-bottom-left-radius: 1.1rem;
+    cursor: pointer; }
     .search-bar-input::placeholder {
       color: #969696; }
   .search-bar-btn {
@@ -90,7 +90,8 @@ body {
     align-self: stretch;
     padding: 0.8rem 1.8rem;
     border-top-right-radius: 1.1rem;
-    border-bottom-right-radius: 1.1rem; }
+    border-bottom-right-radius: 1.1rem;
+    cursor: pointer; }
     .search-bar-btn img {
       width: 100%; }
 
