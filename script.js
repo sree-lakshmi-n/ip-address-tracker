@@ -53,4 +53,4 @@ const getMap = (lat, lng) => {
   let marker = new L.marker([lat, lng]).addTo(map);
   map.addLayer(layer);
 };
-getMap(37.40599, -122.078514);
+getMap(0, 0);
