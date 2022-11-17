@@ -6,7 +6,7 @@ async function getIPDetails(url) {
   return data;
 }
 
-function displayIPDetails() {
+const displayIPDetails = () => {
   const ipAddress =
     document.getElementsByClassName("search-bar-input")[0].value;
   const url = `https://geo.ipify.org/api/v2/country?apiKey=at_vMIjof1g6XVqaF1luAuKpjEHZwIvf&ipAddress=${ipAddress}`;
@@ -15,7 +15,7 @@ function displayIPDetails() {
     console.log(data);
     data.ip ? addIPDetailsContent(data) : alert("Enter valid IP address");
   });
-}
+};
 
 const addIPDetailsContent = (data) => {
   const {
@@ -34,12 +34,15 @@ const addIPDetailsContent = (data) => {
   document.querySelector(".ip-isp .ip-details-content").textContent = isp;
 };
 
-let mapOptions = {
-  center: [17.37, 78.78],
-  zoom: 10,
+const getMap = () => {
+  let mapOptions = {
+    center: [17.37, 78.78],
+    zoom: 10,
+  };
+  let map = new L.map("map", mapOptions);
+  let layer = new L.TileLayer(
+    "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  );
+  map.addLayer(layer);
 };
-let map = new L.map("map", mapOptions);
-let layer = new L.TileLayer(
-  "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-);
-map.addLayer(layer);
+getMap();
