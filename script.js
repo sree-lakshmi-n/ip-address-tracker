@@ -9,7 +9,7 @@ async function getIPDetails(url) {
 const displayIPDetails = () => {
   const ipAddress =
     document.getElementsByClassName("search-bar-input")[0].value;
-  const url = `https://geo.ipify.org/api/v2/country?apiKey=at_vMIjof1g6XVqaF1luAuKpjEHZwIvf&ipAddress=${ipAddress}`;
+  const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_vMIjof1g6XVqaF1luAuKpjEHZwIvf&ipAddress=${ipAddress}`;
 
   getIPDetails(url).then((data) => {
     console.log(data);
@@ -20,10 +20,10 @@ const displayIPDetails = () => {
 const addIPDetailsContent = (data) => {
   const {
     ip,
-    location: { country, region, timezone },
+    location: { country, region, timezone, lat, lng },
     isp,
   } = data;
-  console.log(ip, country, region, timezone, isp);
+  console.log(lat, lng);
   document.querySelector(".ip-address .ip-details-content").textContent = ip;
   document.querySelector(
     ".ip-location .ip-details-content"
@@ -32,17 +32,25 @@ const addIPDetailsContent = (data) => {
     ".ip-timezone .ip-details-content"
   ).textContent = `UTC ${timezone}`;
   document.querySelector(".ip-isp .ip-details-content").textContent = isp;
+  changeMap(lat, lng);
 };
 
-const getMap = () => {
+const changeMap = (lat, lng) => {
+  map.remove();
+  getMap(lat, lng);
+};
+
+const getMap = (lat, lng) => {
+  console.log(typeof lat);
   let mapOptions = {
-    center: [17.37, 78.78],
+    center: [lat, lng],
     zoom: 10,
   };
-  let map = new L.map("map", mapOptions);
+  map = new L.map("map", mapOptions);
   let layer = new L.TileLayer(
     "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
   );
+  let marker = new L.marker([lat, lng]).addTo(map);
   map.addLayer(layer);
 };
-getMap();
+getMap(37.40599, -122.078514);
