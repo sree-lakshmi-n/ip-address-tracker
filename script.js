@@ -12,7 +12,6 @@ const displayIPDetails = () => {
   const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_vMIjof1g6XVqaF1luAuKpjEHZwIvf&ipAddress=${ipAddress}`;
 
   getIPDetails(url).then((data) => {
-    console.log(data);
     data.ip ? addIPDetailsContent(data) : alert("Enter valid IP address");
   });
 };
@@ -23,7 +22,6 @@ const addIPDetailsContent = (data) => {
     location: { country, region, timezone, lat, lng },
     isp,
   } = data;
-  console.log(lat, lng);
   document.querySelector(".ip-address .ip-details-content").textContent = ip;
   document.querySelector(
     ".ip-location .ip-details-content"
@@ -41,7 +39,6 @@ const changeMap = (lat, lng) => {
 };
 
 const getMap = (lat, lng) => {
-  console.log(typeof lat);
   let mapOptions = {
     center: [lat, lng],
     zoom: 10,
@@ -53,4 +50,5 @@ const getMap = (lat, lng) => {
   let marker = new L.marker([lat, lng]).addTo(map);
   map.addLayer(layer);
 };
+displayIPDetails();
 getMap(0, 0);
