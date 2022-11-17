@@ -52,14 +52,28 @@ body {
       font-weight: 500;
       font-size: 2.4rem; }
 
+@media screen and (max-width: 700px) {
+  .ip-details-container {
+    width: 90%;
+    grid-template-columns: 1fr;
+    row-gap: 2.4rem;
+    padding: 2.4rem;
+    text-align: center; }
+    .ip-details-container .ip-details {
+      border: none; }
+      .ip-details-container .ip-details-heading {
+        font-size: 1rem; }
+      .ip-details-container .ip-details-content {
+        font-size: 1.6rem; } }
+
 .search-bar {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  width: 100%; }
+  width: 50%; }
   .search-bar-input {
-    width: 50%;
+    width: 100%;
     padding: 1.4rem;
     font-size: 1.8rem;
     font-family: inherit;
@@ -78,6 +92,14 @@ body {
     border-bottom-right-radius: 1.1rem; }
     .search-bar-btn img {
       width: 100%; }
+
+@media screen and (max-width: 700px) {
+  .search-bar {
+    width: 90%; }
+    .search-bar-input {
+      width: 100%;
+      padding: 1.2rem;
+      font-size: 1.4rem; } }
 
 .attribution {
   position: absolute;
@@ -104,6 +126,12 @@ body {
   color: white;
   font-size: 3.2rem;
   font-weight: 500; }
+
+@media screen and (max-width: 700px) {
+  .section-header {
+    justify-content: unset; }
+  .title {
+    font-size: 2.4rem; } }
 
 #map {
   min-height: 70rem;
