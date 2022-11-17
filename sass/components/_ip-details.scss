@@ -1,0 +1,43 @@
+.ip-details-container {
+  width: 70%;
+  background-color: $white;
+  padding: 3.2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  border-radius: $border-radius-large;
+  -webkit-border-radius: $border-radius-large;
+  -moz-border-radius: $border-radius-large;
+  -ms-border-radius: $border-radius-large;
+  -o-border-radius: $border-radius-large;
+
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+  -moz-transform: translateY(50%);
+  -ms-transform: translateY(50%);
+  -o-transform: translateY(50%);
+  box-shadow: 1px 1px 4px rgba($very-dark-gray, 0.2);
+  .ip-details {
+    border-right: 1px solid $dark-gray;
+
+    &:last-child {
+      border: none;
+    }
+    &-heading {
+      text-transform: uppercase;
+      color: $dark-gray;
+      font-size: 1.4rem;
+      font-weight: $font-wt-medium;
+      letter-spacing: 0.8px;
+      margin-bottom: 1.2rem;
+    }
+    &-content {
+      color: $very-dark-gray;
+      font-weight: $font-wt-medium;
+      font-size: 2.4rem;
+    }
+  }
+}

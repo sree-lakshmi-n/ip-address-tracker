@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP Address Tracker</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+      crossorigin=""
+    ></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <header class="section-header">
+        <h1 class="title">IP Address Tracker</h1>
+        <form action="javascript:displayIPDetails()" class="search-bar">
+          <input
+            type="text"
+            placeholder="Search for any IP address or domain "
+            name="search"
+            class="search-bar-input"
+          />
+          <button type="submit" class="search-bar-btn">
+            <img src="./images/icon-arrow.svg" />
+          </button>
+        </form>
+        <div class="ip-details-container">
+          <div class="ip-details ip-address">
+            <p class="ip-details-heading">IP Address</p>
+            <span class="ip-details-content"></span>
+          </div>
+          <div class="ip-details ip-location">
+            <p class="ip-details-heading">Location</p>
+            <span class="ip-details-content"></span>
+          </div>
+          <div class="ip-details ip-timezone">
+            <p class="ip-details-heading">Timezone</p>
+            <span class="ip-details-content"></span>
+          </div>
+          <div class="ip-details ip-isp">
+            <p class="ip-details-heading">ISP</p>
+            <span class="ip-details-content"></span>
+          </div>
+        </div>
+      </header>
+      <section id="map"></section>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/sree-lakshmi-n"
+        >Sree Lakshmi N.</a
+      >.
+    </div>
+  </body>
+</html>
